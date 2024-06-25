@@ -19,6 +19,12 @@ public class RicettaController {
 	    return "ricette.html";
 	  }
 	
+	  @GetMapping("/ricetta")
+	  public String showRicette(Model model) {
+	    model.addAttribute("ricette", this.ricettaService.findAll());
+	    return "ricette.html";
+	  }
+
 	
 
 
