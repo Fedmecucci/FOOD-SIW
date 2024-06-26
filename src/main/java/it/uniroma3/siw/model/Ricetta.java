@@ -14,7 +14,7 @@ public class Ricetta {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
 	private String nome;
-	private String ingredienti;
+	
 	
 	private String cuoco;
 	
@@ -30,13 +30,7 @@ public class Ricetta {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getIngredienti() {
-		return ingredienti;
-	}
-	public void setIngredienti(String ingredienti) {
-		this.ingredienti = ingredienti;
-	}
-	
+
 	public String getCuoco() {
 		return cuoco;
 	}

@@ -1,7 +1,9 @@
 package it.uniroma3.siw.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import it.uniroma3.siw.model.Ricetta;
 import it.uniroma3.siw.repository.RicettaRepository;
@@ -10,14 +12,17 @@ import it.uniroma3.siw.repository.RicettaRepository;
 public class RicettaService { 
 	
 	@Autowired
-	private RicettaRepository ricetteRepository;
+	private RicettaRepository ricettaRepository;
 
 	public Ricetta findById(Long id) {
-		return ricetteRepository.findById(id).get();
+		return ricettaRepository.findById(id).get();
 	}
 
 	public Iterable<Ricetta> findAll() {
-		return ricetteRepository.findAll();
+		return ricettaRepository.findAll();
+	}
+	public void save(Ricetta movie) {
+		ricettaRepository.save(movie);
 	}
 
 

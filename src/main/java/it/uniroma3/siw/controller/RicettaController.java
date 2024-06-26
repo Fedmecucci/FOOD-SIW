@@ -14,18 +14,27 @@ public class RicettaController {
 	@Autowired RicettaService ricettaService;
 	
 	@GetMapping("/ricetta/{id}")
-	  public String getRicette(@PathVariable("id") Long id, Model model) {
+	  public String getRicetta(@PathVariable("id") Long id, Model model) {
 	    model.addAttribute("ricetta", this.ricettaService.findById(id));
-	    return "ricette.html";
+	    return "ricetta.html";
 	  }
 	
 	  @GetMapping("/ricetta")
 	  public String showRicette(Model model) {
 	    model.addAttribute("ricette", this.ricettaService.findAll());
-	    return "ricette.html";
+	    return "ricetta.html";
 	  }
 
-	
+	  @GetMapping("/ricettario")
+	  public String showRicettario(Model model) {
+	    model.addAttribute("ricette", this.ricettaService.findAll());
+	    return "ricettario.html";
+	  }
+
+	  @GetMapping("/index.html")
+	  public String index() {
+		  return "index.html";
+	  }
 
 
 }
